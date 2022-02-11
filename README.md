@@ -1,3 +1,6 @@
+![](https://user-images.githubusercontent.com/90863226/153531978-b95bb2ed-f4df-4d47-af24-e6744d339cf7.jpg)
+
+
 # Jog-Your-Memory
 ## Overview
 Topic - Develop an app that predicts the rating of a running/walking route based on user interaction defined below:

@@ -60,26 +60,75 @@
     
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
           <p>Filter Search UPDATE </p>
           <ul class="bg-dark list-group">
 
             <li class="bg-dark list-group-item">
               <label for="state_name">Enter Full State Name</label><br>
               <select id="state_name">
+                <option value="Alaska">Alaska</option>
+                <option value="Arizona">Arizona</option>
+                <option value="Arkansas">Arkansas</option>
+                <option value="California">California</option>
+                <option value="Colorado">Colorado</option>
+                <option value="Florida">Florida</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Indiana">Indiana</option>
+                <option value="Kentucky">Kentucky</option>
+                <option value="Maine">Maine</option>
+                <option value="Maui">Maui</option>
+                <option value="Michigan">Michigan</option>
                 <option value="Minnesota">Minnesota</option>
-                <option value="Utah">Utah</option>
+                <option value="Missouri">Missouri</option>
+                <option value="Montana">Montana</option>
+                <option value="Nevada">Nevada</option>
+                <option value="New Mexico">New Mexico</option>
+                <option value="North Carolina">North Carolina</option>
+                <option value="North Dakota">North Dakota</option>
+                <option value="Ohio">Ohio</option>
+                <option value="Oregon">Oregon</option>
+                <option value="South Carolina">South Carolina</option>
+                <option value="South Dakota">South Dakota</option>
+                <option value="Tennessee">Tennessee</option>
+                <option value="Texas">Texas</option>
+                <option value="Virginia">Virginia</option>
+                <option value="Washington">Washington</option>
+                <option value="Wyoming">Wyoming</option>
               </select>
 
-            <li class="bg-dark list-group-item">
-              <label for="difficulty_rating">Enter Difficulty 1,3,5 or 7</label><br>
-              <input type="number" placeholder="5" id="difficulty_rating"/>
+              <li class="bg-dark list-group-item">
+                <label for="difficulty_rating">Enter Difficulty</label><br>
+                <select id="difficulty_rating">
+                  <option value="1">Easy</option>
+                  <option value="3">Medium</option>
+                  <option value="5">Hard</option>
+                  <option value="7">Hard AF</option>
+                </select>              
+
+
+              <li class="bg-dark list-group-item">
+                <label for="route_type">Route Type</label><br>
+                <select id="route_type">
+                  <option value="loop">Loop</option>
+                  <option value="out and back">Out and Back</option>
+                </select>
+                
+              <li class="bg-dark list-group-item">
+                <label for="waterfall">Waterfall</label><br>
+                <select id="waterfall">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>                
 
              
             <input id="clickme" type= "button" value="Click To Find Your Trail" 
               onclick="setupMap(x => 
                 x.state_name == document.getElementById('state_name').value
                 && x.difficulty_rating == document.getElementById('difficulty_rating').value
+                && x.route_type == document.getElementById('route_type').value
+                && x.waterfall == document.getElementById('waterfall').value
               );"/>
               
               

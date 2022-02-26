@@ -66,15 +66,31 @@
 
             <li class="bg-dark list-group-item">
               <label for="state_name">Enter Full State Name</label><br>
-              <input type="text" placeholder="Alaska" id="state_name"
-              onchange="setupMap(x => x.state_name.toLocaleLowerCase() == document.getElementById('state_name').value.trim().toLocaleLowerCase())" />
+              <select id="state_name">
+                <option value="Minnesota">Minnesota</option>
+                <option value="Utah">Utah</option>
+              </select>
+
+            <li class="bg-dark list-group-item">
+              <label for="difficulty_rating">Enter Difficulty 1,3,5 or 7</label><br>
+              <input type="number" placeholder="5" id="difficulty_rating"/>
+
+             
+            <input id="clickme" type= "button" value="Click To Find Your Trail" 
+              onclick="setupMap(x => 
+                x.state_name == document.getElementById('state_name').value
+                && x.difficulty_rating == document.getElementById('difficulty_rating').value
+              );"/>
+              
+              
+              <!-- id="clickme" onclick="setupMap(x => x.state_name.toLocaleLowerCase() == document.getElementById('state_name').value.trim().toLocaleLowerCase());"/> -->
+              <!-- onchange="setupMap(x => x.state_name.toLocaleLowerCase() == document.getElementById('state_name').value.trim().toLocaleLowerCase())" /> -->
               
               <!-- class="bg-dark list-group-item">
               <label for="avg_rating">Average Rating</label><br>
               <input type="text" placeholder="Alaska" id="avg_rating" -->
 
-
-                
+               
               <!-- <li class="bg-dark list-group-item">
                 <label for="difficulty_rating">Enter Number 1-5 XXXX</label><br>
                 <input type="text" placeholder="5" id="difficulty_rating"

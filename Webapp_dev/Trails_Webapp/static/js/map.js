@@ -2,8 +2,8 @@
 var map = L.map('map', {
     center: [50.0, -95.42], // EDIT latitude, longitude to re-center map
     zoom: 4,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
-    scrollWheelZoom: false,
-    tap: false
+    scrollWheelZoom: true,
+    tap: true
 });
 
 /* Control panel to display map layers */
@@ -16,7 +16,7 @@ var controlLayers = L.control.layers(null, null, {
 var light = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>',
 }).addTo(map); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
-controlLayers.addBaseLayer(light, 'Carto Light basemap');
+controlLayers.addBaseLayer(light, 'Light basemap');
 
 /* Stamen colored terrain basemap tiles with labels */
 var terrain = L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.png', {

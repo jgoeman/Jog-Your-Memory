@@ -1,4 +1,4 @@
-// from data.js
+// get data
 const tableData = data;
 
 // get table references

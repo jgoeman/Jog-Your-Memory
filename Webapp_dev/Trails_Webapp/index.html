@@ -20,11 +20,13 @@
   <style>
     #map {
       position: relative;
+      left: relative;
+      right: relative;
       border: 1px solid black;
-      border-radius: 8px;
+      border-radius: 20px;
       height: 400px;
       /* or as desired */
-      width: 100%;
+      width: auto;
       /* This means "100% of the width of its container", the .col-md-8 */
     }
   </style>
@@ -36,20 +38,20 @@
       <a class="navbar-brand" href="index.html">JOG YOUR MEMORY</a>
     </nav>
     <div class="jumbotron">
-      <h1 class="display-4">ADD TEXT HERE</h1>
+      <h1 class="display-4">ADD TEXT HERE 1</h1>
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
-          <h3>ADD TEXT HERE <small><br>ADD TEXT HERE</small></h3>
+          <h3>ADD TEXT HERE 2 <small><br>ADD TEXT HERE 3</small></h3>
         </div>
         <div class="col-md-8">
           <p>
-            ADD TEXT HERE
+            ADD TEXT HERE 4
             <br><br>
-            ADD TEXT HERE
+            ADD TEXT HERE 5
             <br><br>
-            ADD TEXT HERE
+            ADD TEXT HERE 6
             <br><br>
           </p>
         </div>
@@ -57,17 +59,18 @@
       </div>
     </div>
 
-    <div id="map"></div>
+    
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3">
-          <p>Filter Search</p>
+          <p>Filter Search UPDATE </p>
           <ul class="bg-dark list-group">
 
             <li class="bg-dark list-group-item">
-              <label for="state_name">Enter Name</label><br>
+              <label for="state_name">Enter Full State Name</label><br>
               <input type="text" placeholder="Alaska" id="state_name"
                 onchange="setupMap(x => x.state_name.toLocaleLowerCase() == document.getElementById('state_name').value.trim().toLocaleLowerCase())" />
+                
               <!-- Deliverable 1
                       <li class="bg-dark list-group-item">
                           <label for="city">Enter a City</label><br>
@@ -83,29 +86,29 @@
                           <input type="text" placeholder="Shape" id="shape" /></li> -->
             </li>
           </ul>
-
+<!-- REMOVE TABLE -->
         </div>
-        <div class="col-md-9">
+        <!-- <div class="col-md-9">
           <table class="table table-striped">
             <thead>
               <tr>
                 <th>state_name</th>
-                <!-- <th>City</th>
+                <!- <th>City</th>
                         <th>State</th>
                         <th>Country</th>
                         <th>Shape</th>
                         <th>Duration</th>
                         <th>Comments</th> -->
-              </tr>
+              <!-- </tr>
             </thead>
             <tbody></tbody>
-          </table>
+          </table>  -->
         </div>
       </div>
+    <div id="map"></div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-  <script src="static/js/data.js"></script>
   <script src="static/js/app.js"></script>
   <script src="static/js/map.js"></script>
   <!-- <script type="text/javascript" src="static/js/config.js"></script>

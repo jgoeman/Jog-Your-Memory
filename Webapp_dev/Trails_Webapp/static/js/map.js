@@ -1,7 +1,7 @@
 // Set up initial map center and zoom level
 var map = L.map('map', {
     center: [50.0, -95.42], // EDIT latitude, longitude to re-center map
-    zoom: 3,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
+    zoom: 4,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
     scrollWheelZoom: false,
     tap: false
 });
@@ -48,10 +48,13 @@ function setupMap(includePredicate) {
             if (includePredicate(row)) {
                 var marker = L.marker([row.Lat, row.Lng], {
                     opacity: 1,
-                }).bindPopup(`<h3>${row.name}</h3> <hr> <h4>Alltrails Link: <a href="${row.trail_url}">${row.trail_url}</a></h4>`);
+                }).bindPopup(`<h3>${row.name}</h3> <hr> <h4>Alltrails Link: <a href="${row.trail_url}">${row.trail_url}</a></h4>`, {
+                    maxWidth: "auto"
+                });
 
                 marker.addTo(map);
                 markers.push(marker);
+                
             }
         }
 

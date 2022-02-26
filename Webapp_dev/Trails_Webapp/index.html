@@ -25,9 +25,8 @@
       border: 1px solid black;
       border-radius: 20px;
       height: 400px;
-      /* or as desired */
+
       width: auto;
-      /* This means "100% of the width of its container", the .col-md-8 */
     }
   </style>
 </head>
@@ -38,21 +37,20 @@
       <a class="navbar-brand" href="index.html">JOG YOUR MEMORY</a>
     </nav>
     <div class="jumbotron">
-      <h1 class="display-4">ADD TEXT HERE 1</h1>
+      <h1 class="display-4", style="color: rgb(37, 35, 158);"><strong>STEP AWAY FROM THE SCREEN AND INTO NATURE</strong></h1>
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
           <h3>ADD TEXT HERE 2 <small><br>ADD TEXT HERE 3</small></h3>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
           <p>
-            ADD TEXT HERE 4
-            <br><br>
-            ADD TEXT HERE 5
-            <br><br>
-            ADD TEXT HERE 6
-            <br><br>
+            <h3>Overview - Add Flavor <small><br>
+            Are your local parks and trails far busier than usual? Is it harder to find a trailhead parking spot or biking, hiking, and camping gear?            
+            It’s not your imagination. An analysis by AllTrails (trail navigation app) showed the number of logged hikes in 2020 was up 171.4 percent compared to 2019 (4,713,654 vs 1,737,029).
+            Looking for therapeutic exercise and an escape away from the crowds? Our mission is to use data science and machine learning to identify lightly trafficked trails with undiscovered greatness.
+            
           </p>
         </div>
 
@@ -69,50 +67,28 @@
             <li class="bg-dark list-group-item">
               <label for="state_name">Enter Full State Name</label><br>
               <input type="text" placeholder="Alaska" id="state_name"
-                onchange="setupMap(x => x.state_name.toLocaleLowerCase() == document.getElementById('state_name').value.trim().toLocaleLowerCase())" />
+              onchange="setupMap(x => x.state_name.toLocaleLowerCase() == document.getElementById('state_name').value.trim().toLocaleLowerCase())" />
+              
+              <!-- class="bg-dark list-group-item">
+              <label for="avg_rating">Average Rating</label><br>
+              <input type="text" placeholder="Alaska" id="avg_rating" -->
+
+
                 
-              <!-- Deliverable 1
-                      <li class="bg-dark list-group-item">
-                          <label for="city">Enter a City</label><br>
-                          <input type="text" placeholder="City" id="city" /></li>
-                      <li class="bg-dark list-group-item">   
-                          <label for="state">Enter a state</label><br>
-                          <input type="text" placeholder="State" id="state" /></li>
-                      <li class="bg-dark list-group-item">
-                          <label for="country">Enter a Country</label><br>
-                          <input type="text" placeholder="Country" id="country" /></li>
-                      <li class="bg-dark list-group-item">
-                          <label for="shape">Enter a Shape</label><br>
-                          <input type="text" placeholder="Shape" id="shape" /></li> -->
-            </li>
+              <!-- <li class="bg-dark list-group-item">
+                <label for="difficulty_rating">Enter Number 1-5 XXXX</label><br>
+                <input type="text" placeholder="5" id="difficulty_rating"
+                  onchange="setupMap(x => x.state_name.toLocaleLowerCase() == document.getElementById('difficulty_rating').value.trim().toLocaleLowerCase())" /> -->
+              
+           </li>
           </ul>
-<!-- REMOVE TABLE -->
-        </div>
-        <!-- <div class="col-md-9">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>state_name</th>
-                <!- <th>City</th>
-                        <th>State</th>
-                        <th>Country</th>
-                        <th>Shape</th>
-                        <th>Duration</th>
-                        <th>Comments</th> -->
-              <!-- </tr>
-            </thead>
-            <tbody></tbody>
-          </table>  -->
         </div>
       </div>
     <div id="map"></div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-  <script src="static/js/app.js"></script>
   <script src="static/js/map.js"></script>
-  <!-- <script type="text/javascript" src="static/js/config.js"></script>
-    <script type="text/javascript" src="static/js/logic.js"></script> -->
 </body>
 
 </html>

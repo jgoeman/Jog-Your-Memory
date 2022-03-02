@@ -48,13 +48,14 @@ function setupMap(includePredicate) {
             if (includePredicate(row)) {
                 var marker = L.marker([row.Lat, row.Lng], {
                     opacity: 1,
-                }).bindPopup(`<h3>${row.name}</h3> <hr> <h4>Alltrails Link: <a href="${row.trail_url}" target="_blank">${row.trail_url}</a></h4>`, {
+                }).bindPopup(`<h3>${row.name}</h3> <hr> <h7>Alltrails Link: <a href="${row.trail_url}" target="_blank">${row.trail_url}</a></h7>`, {
                     maxWidth: "auto"
                 });
 
                 marker.addTo(map);
                 markers.push(marker);
-                
+                var group = L.featureGroup(markers);
+                map.fitBounds(group.getBounds());
             }
         }
 

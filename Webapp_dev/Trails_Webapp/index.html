@@ -98,9 +98,11 @@
                 <option value="Wyoming">Wyoming</option>
               </select>
 
+
               <li class="bg-dark list-group-item">
                 <label for="difficulty_rating">Enter Difficulty</label><br>
                 <select id="difficulty_rating">
+                  <option value="">No Pref</option>
                   <option value="1">Easy</option>
                   <option value="3">Medium</option>
                   <option value="5">Hard</option>
@@ -111,6 +113,7 @@
               <li class="bg-dark list-group-item">
                 <label for="route_type">Route Type</label><br>
                 <select id="route_type">
+                  <option value="">No Pref</option>
                   <option value="loop">Loop</option>
                   <option value="out and back">Out and Back</option>
                 </select>
@@ -118,17 +121,19 @@
               <li class="bg-dark list-group-item">
                 <label for="waterfall">Waterfall</label><br>
                 <select id="waterfall">
+                  <option value="">No Pref</option>
                   <option value="0">No</option>
                   <option value="1">Yes</option>
                 </select>                
 
              
             <input id="clickme" type= "button" value="Click To Find Your Trail" 
+            
               onclick="setupMap(x => 
                 x.state_name == document.getElementById('state_name').value
-                && x.difficulty_rating == document.getElementById('difficulty_rating').value
-                && x.route_type == document.getElementById('route_type').value
-                && x.waterfall == document.getElementById('waterfall').value
+                && (x.difficulty_rating == document.getElementById('difficulty_rating').value|| document.getElementById('difficulty_rating').value == '')
+                && (x.route_type == document.getElementById('route_type').value|| document.getElementById('route_type').value == '')
+                && (x.waterfall == document.getElementById('waterfall').value || document.getElementById('waterfall').value == '')
               );"/>
               
               

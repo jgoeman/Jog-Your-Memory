@@ -20,11 +20,17 @@ Which trail features drive a trails popularity?
  
   1. Perform statistical analysis on AllTrails dataset
   
-  ![Trails_per_state](https://user-images.githubusercontent.com/90863226/156673910-6bf1e64a-a5e5-491a-a279-221691d6a463.png)
+     * California has the most National Park Trails by far
+     
+     ![Trails_per_state](https://user-images.githubusercontent.com/90863226/156673910-6bf1e64a-a5e5-491a-a279-221691d6a463.png)
+     
+     * The average ratings are very tightly distributed, which makes it difficult to distinguish excellent vs good trails
+     
+     ![Avg_Rating_Stats](https://user-images.githubusercontent.com/90863226/156673938-3c6bf6a6-e718-4fcd-8992-65df8fabe50c.png)
   
-  ![Avg_Rating_Stats](https://user-images.githubusercontent.com/90863226/156673938-3c6bf6a6-e718-4fcd-8992-65df8fabe50c.png)
-  
-  ![Number_of_Reviews_stats](https://user-images.githubusercontent.com/90863226/156673966-093616a0-1a31-476b-afbf-0a3434e24753.png)
+     * Trail popularity, based on number of reviews, shows variation
+   
+     ![Number_of_Reviews_stats](https://user-images.githubusercontent.com/90863226/156673966-093616a0-1a31-476b-afbf-0a3434e24753.png)
   
   1. Create a vaderSentiment model to assign a Sentiment score to each TripAdvisor review, and get a Sentiment positive/negative rating by trail using an average of each trail's review scores
 

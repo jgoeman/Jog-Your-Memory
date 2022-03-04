@@ -141,8 +141,16 @@
                   <option value="0">No</option>
                   <option value="1">Yes</option>
                 </select>      
+                 
+              <li class="bg-dark list-inline-item">
+                <label for="hidden_gem">Hidden Gem</label><br>
+                <select id="hidden_gem">
+                  <option value="">No Pref</option>
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>      
+                  
                 
-               
            </li>
           </div>
                        
@@ -156,6 +164,8 @@
              && (x.dogs_no == document.getElementById('dogs_no').value || document.getElementById('dogs_no').value == '')  
              && (x.trail_running == document.getElementById('trail_running').value || document.getElementById('trail_running').value == '')    
              && (x.Predicted_Popularity == document.getElementById('Predicted_Popularity').value || document.getElementById('Predicted_Popularity').value == '')            
+             && (x.Predicted_Popularity == document.getElementById('hidden_gem').value || document.getElementById('hidden_gem').value == '')            
+
            );"/>
           </ul>
         </div>

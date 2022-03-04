@@ -9,7 +9,7 @@ Are your local parks and trails far busier than usual?  Is it harder to find a t
 Looking for therapeutic exercise and an escape away from the crowds?  Our mission is to use data science and machine learning to identify lightly trafficked trails with undiscovered greatness; the "Diamond in the Rough".
 
 ## Hypothesis/Question 
-What is the relationship among features of a trail and its popularity?  
+Which trail features drive a trails popularity?  
   
 ## Approach  
   1. Obtain, clean and store data in csv files
@@ -20,11 +20,21 @@ What is the relationship among features of a trail and its popularity?
  
   1. Perform statistical analysis on AllTrails dataset
   
+  ![Trails_per_state](https://user-images.githubusercontent.com/90863226/156673910-6bf1e64a-a5e5-491a-a279-221691d6a463.png)
+  
+  ![Avg_Rating_Stats](https://user-images.githubusercontent.com/90863226/156673938-3c6bf6a6-e718-4fcd-8992-65df8fabe50c.png)
+  
+  ![Number_of_Reviews_stats](https://user-images.githubusercontent.com/90863226/156673966-093616a0-1a31-476b-afbf-0a3434e24753.png)
+  
   1. Create a vaderSentiment model to assign a Sentiment score to each TripAdvisor review, and get a Sentiment positive/negative rating by trail using an average of each trail's review scores
 
   1. Run a Fuzzy Match to combine the sentiment scores/ratings subset with the related AllTrails data
   
   1. Use RandomForest to create a model to determine the relationship between a trail's features and its sentiment score/rating
+  
+  ![RF_Confusion_Matrix](https://user-images.githubusercontent.com/90863226/156674112-0d0ef9b3-edee-4f8a-84af-628a212bc02f.png)
+  
+  ![RF_Important_Features](https://user-images.githubusercontent.com/90863226/156674129-d6ffabb9-9245-40dd-ac36-b5f1d89ba3d6.png)
   
   1. Apply the model to the AllTrails dataset to predict the sentiment score/rating to every trail in the dataset, and use this in conjunction with the number of reviews to find the "Diamonds in the Rough" 
   

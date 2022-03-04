@@ -12,12 +12,13 @@ Looking for therapeutic exercise and an escape away from the crowds?  Our missio
 Which trail features drive a trails popularity?  
   
 ## Approach  
-  1. Obtain, clean and store data in csv files
- 
-     * Kaggle Dataset: AllTrails trail information including trail name, location, distance, elevation gain, difficulty, average rating, type of trail, features, activities, and map coordinates
+  1. Obtain trail information from National Parks Kaggle Data including trail name, location, distance, elevation gain, difficulty, rating, type of trail, features, activities, and map coordinates
+  1. Clean the data, create a Pandas DataFrame, and save as a csv file
+     * Create separate columns for each trail feature/activity
+     * Create a new column for the AllTrails URL & create URL by combining the base URL with the state and trail name
+     * Separate the geo-location column into separate lat & lng columns
+     * Drop unnecessary columns
 
-     * Webscrape using Splinter/BeautifulSoup: TripAdvisor Reviews for National Park Trails included in AllTrails data
- 
   1. Perform statistical analysis on AllTrails dataset
   
      * California has the most National Park Trails by far
@@ -31,8 +32,10 @@ Which trail features drive a trails popularity?
      * Trail popularity, based on number of reviews, shows variation
    
      ![Number_of_Reviews_stats](https://user-images.githubusercontent.com/90863226/156673966-093616a0-1a31-476b-afbf-0a3434e24753.png)
-  
-  1. Create a vaderSentiment model to assign a Sentiment score to each TripAdvisor review, and get a Sentiment positive/negative rating by trail using an average of each trail's review scores
+   
+  1. Scrape trail reviews from TripAdvisor
+
+  2. Create a vaderSentiment model to assign a Sentiment score to each TripAdvisor review, and get a Sentiment positive/negative rating by trail using an average of each trail's review scores
 
   1. Run a Fuzzy Match to combine the sentiment scores/ratings subset with the related AllTrails data
   
@@ -46,7 +49,7 @@ Which trail features drive a trails popularity?
   
   1. Use HTML, Javascript, and CSS to display results on a webpage
   
-     * User inputs: Location (city and state)
+     * User inputs: Location (city and state), Trail Difficulty, Desired Features
 
      * App renders a map (center is user's entered location) with markers at trailhead and pop-ups with key trail information
 

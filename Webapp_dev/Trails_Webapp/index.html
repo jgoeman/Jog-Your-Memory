@@ -24,7 +24,7 @@
       right: relative;
       border: 1px solid black;
       border-radius: 20px;
-      height: 400px;
+      height: 450px;
 
       width: auto;
     }
@@ -37,34 +37,27 @@
       <a class="navbar-brand" href="index.html">JOG YOUR MEMORY</a>
     </nav>
     <div class="jumbotron">
-      <h1 class="display-4", style="color: rgb(37, 35, 158);"><strong>STEP AWAY FROM THE SCREEN AND INTO NATURE</strong></h1>
+      <h1 class="display-4", style="color: rgb(37, 37, 37);"><strong>STEP AWAY FROM THE SCREEN AND INTO NATURE</strong></h1>
     </div>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-4">
-          <h3>ADD TEXT HERE 2 <small><br>ADD TEXT HERE 3</small></h3>
-        </div>
-        <div class="col-md-6">
-          <p>
-            <h3>Overview - Add Flavor <small><br>
-            Are your local parks and trails far busier than usual? Is it harder to find a trailhead parking spot or biking, hiking, and camping gear?            
-            It’s not your imagination. An analysis by AllTrails (trail navigation app) showed the number of logged hikes in 2020 was up 171.4 percent compared to 2019 (4,713,654 vs 1,737,029).
-            Looking for therapeutic exercise and an escape away from the crowds? Our mission is to use data science and machine learning to identify lightly trafficked trails with undiscovered greatness.
-            
-          </p>
-        </div>
-
+      <div class="center"  {margin: auto};>
+        <p>
+          <h3>Overview - Add Flavor <small><br>
+          Are your local parks and trails far busier than usual? Is it harder to find a trailhead parking spot or biking, hiking, and camping gear?            
+          It's not your imagination. An analysis by AllTrails (trail navigation app) showed the number of logged hikes in 2020 was up 171.4 percent compared to 2019 (4,713,654 vs 1,737,029).
+          Looking for therapeutic exercise and an escape away from the crowds? Our mission is to use data science and machine learning to identify lightly trafficked trails with undiscovered greatness.
+        </p>
       </div>
     </div>
 
     
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-2">
-          <p>Filter Search UPDATE </p>
-          <ul class="bg-dark list-group">
+      <div class="center">
+        <div class="col-lg">
+          <p>Please make selections below to find your perfect trail: </p>
+          <ul class="bg-dark list-inline">
 
-            <li class="bg-dark list-group-item">
+            <li class="bg-dark list-inline-item">
               <label for="state_name">Enter Full State Name</label><br>
               <select id="state_name">
                 <option value="Alaska">Alaska</option>
@@ -78,7 +71,6 @@
                 <option value="Indiana">Indiana</option>
                 <option value="Kentucky">Kentucky</option>
                 <option value="Maine">Maine</option>
-                <option value="Maui">Maui</option>
                 <option value="Michigan">Michigan</option>
                 <option value="Minnesota">Minnesota</option>
                 <option value="Missouri">Missouri</option>
@@ -99,18 +91,18 @@
               </select>
 
 
-              <li class="bg-dark list-group-item">
+              <li class="bg-dark list-inline-item">
                 <label for="difficulty_rating">Enter Difficulty</label><br>
                 <select id="difficulty_rating">
                   <option value="">No Pref</option>
                   <option value="1">Easy</option>
                   <option value="3">Medium</option>
                   <option value="5">Hard</option>
-                  <option value="7">Hard AF</option>
+                  <option value="7">Really Hard</option>
                 </select>              
 
 
-              <li class="bg-dark list-group-item">
+              <li class="bg-dark list-inline-item">
                 <label for="route_type">Route Type</label><br>
                 <select id="route_type">
                   <option value="">No Pref</option>
@@ -118,43 +110,57 @@
                   <option value="out and back">Out and Back</option>
                 </select>
                 
-              <li class="bg-dark list-group-item">
+              <li class="bg-dark list-inline-item">
                 <label for="waterfall">Waterfall</label><br>
                 <select id="waterfall">
                   <option value="">No Pref</option>
                   <option value="0">No</option>
                   <option value="1">Yes</option>
-                </select>                
+                </select>   
+              
+              <li class="bg-dark list-inline-item">
+                <label for="dogs_no">Dogs Allowed</label><br>
+                <select id="dogs_no">
+                  <option value="">No Pref</option>
+                  <option value="1">No</option>                  
+                  <option value="0">Yes</option>
+                </select>    
 
-             
-            <input id="clickme" type= "button" value="Click To Find Your Trail" 
-            
-              onclick="setupMap(x => 
-                x.state_name == document.getElementById('state_name').value
-                && (x.difficulty_rating == document.getElementById('difficulty_rating').value|| document.getElementById('difficulty_rating').value == '')
-                && (x.route_type == document.getElementById('route_type').value|| document.getElementById('route_type').value == '')
-                && (x.waterfall == document.getElementById('waterfall').value || document.getElementById('waterfall').value == '')
-              );"/>
-              
-              
-              <!-- id="clickme" onclick="setupMap(x => x.state_name.toLocaleLowerCase() == document.getElementById('state_name').value.trim().toLocaleLowerCase());"/> -->
-              <!-- onchange="setupMap(x => x.state_name.toLocaleLowerCase() == document.getElementById('state_name').value.trim().toLocaleLowerCase())" /> -->
-              
-              <!-- class="bg-dark list-group-item">
-              <label for="avg_rating">Average Rating</label><br>
-              <input type="text" placeholder="Alaska" id="avg_rating" -->
+              <li class="bg-dark list-inline-item">
+                <label for="trail_running">Trail Running</label><br>
+                <select id="trail_running">
+                  <option value="">No Pref</option>
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>   
 
+              <li class="bg-dark list-inline-item">
+                <label for="Predicted_Popularity">Really Cool Trail</label><br>
+                <select id="Predicted_Popularity">
+                  <option value="">No Pref</option>
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>      
+                
                
-              <!-- <li class="bg-dark list-group-item">
-                <label for="difficulty_rating">Enter Number 1-5 XXXX</label><br>
-                <input type="text" placeholder="5" id="difficulty_rating"
-                  onchange="setupMap(x => x.state_name.toLocaleLowerCase() == document.getElementById('difficulty_rating').value.trim().toLocaleLowerCase())" /> -->
-              <!-- I made a change here muhahahawhahahaaha ha HA -->
            </li>
+          </div>
+                       
+           <input id="clickme" type= "button" value="Click To Find Your Trail" 
+
+           onclick="setupMap(x => 
+             x.state_name == document.getElementById('state_name').value
+             && (x.difficulty_rating == document.getElementById('difficulty_rating').value|| document.getElementById('difficulty_rating').value == '')
+             && (x.route_type == document.getElementById('route_type').value|| document.getElementById('route_type').value == '')
+             && (x.waterfall == document.getElementById('waterfall').value || document.getElementById('waterfall').value == '')
+             && (x.dogs_no == document.getElementById('dogs_no').value || document.getElementById('dogs_no').value == '')  
+             && (x.trail_running == document.getElementById('trail_running').value || document.getElementById('trail_running').value == '')    
+             && (x.Predicted_Popularity == document.getElementById('Predicted_Popularity').value || document.getElementById('Predicted_Popularity').value == '')            
+           );"/>
           </ul>
         </div>
       </div>
-    <div id="map"></div>
+        <div id="map"></div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>

@@ -42,10 +42,17 @@
     <div class="container-fluid">
       <div class="center"  {margin: auto};>
         <p>
-          <h3>Overview - Add Flavor <small><br>
-          Are your local parks and trails far busier than usual? Is it harder to find a trailhead parking spot or biking, hiking, and camping gear?            
-          It's not your imagination. An analysis by AllTrails (trail navigation app) showed the number of logged hikes in 2020 was up 171.4 percent compared to 2019 (4,713,654 vs 1,737,029).
-          Looking for therapeutic exercise and an escape away from the crowds? Our mission is to use data science and machine learning to identify lightly trafficked trails with undiscovered greatness.
+          <h5>
+          Thanks for stopping! A team of super awesome people worked together to generate this page. We completed a Data Visualization and Analytics Bootcamp and this is part of our final project. 
+          After spending 95% of our waking hours looking at computer screens between our day jobs and coursework, WE NEED A BREAK! HOW ABOUT YOU?
+          <br>
+          <br>
+          We gathered data about US National Park Trails, transformed it, then scraped the internet for review data on these trails to build a sentiment analysis and create this page! 
+          <br>
+          We used machine learning to predict trails that are lightly travled and feature rich; "hidden gems".
+          <br>
+          <br>
+          It's time to step into nature. Use the filters below to find your perfect trail.
         </p>
       </div>
     </div>
@@ -54,11 +61,10 @@
     <div class="container-fluid">
       <div class="center">
         <div class="col-lg">
-          <p>Please make selections below to find your perfect trail: </p>
           <ul class="bg-dark list-inline">
 
             <li class="bg-dark list-inline-item">
-              <label for="state_name">Enter Full State Name</label><br>
+              <label for="state_name">Select State</label><br>
               <select id="state_name">
                 <option value="Alaska">Alaska</option>
                 <option value="Arizona">Arizona</option>
@@ -92,7 +98,7 @@
 
 
               <li class="bg-dark list-inline-item">
-                <label for="difficulty_rating">Enter Difficulty</label><br>
+                <label for="difficulty_rating">Difficulty</label><br>
                 <select id="difficulty_rating">
                   <option value="">No Pref</option>
                   <option value="1">Easy</option>

@@ -9,10 +9,10 @@ Are your local parks and trails far busier than usual?  Is it harder to find a t
 Looking for therapeutic exercise and an escape away from the crowds?  Our mission is to use data science and machine learning to identify lightly trafficked trails with undiscovered greatness; the "Hidden Gems".
 
 ## Hypothesis/Question 
-Can trail's popularity be predicted by its features?  
+Can a trail's popularity be predicted by its features?  
   
 ## Approach  
-  1. Obtain trail information from National Parks Kaggle Data including trail name, location, distance, elevation gain, difficulty, rating, type of trail, features, activities, and map coordinates
+  1. Obtain trail information from National Parks Kaggle Data including trail name, location, distance, elevation gain, difficulty, rating, type of trail, features, activities, and map coordinates.
  
   1. Clean the data, create a Pandas DataFrame, and save as a csv file.
      * Use one-hot encoding dummy variables for all categorical feature columns.
@@ -32,7 +32,7 @@ Can trail's popularity be predicted by its features?
   
   1. Apply the model to the AllTrails dataset.  Secondly, use the predicted popularity and trails with low traffic (number of reviews) to identify undiscovered hidden gems. 
   
-  1. Use HTML, Javascript, and CSS to display results on a webpage
+  1. Use HTML, Javascript, and CSS to display results on a webpage.
   
      * User selections: State and feature options, including hidden gems
 
@@ -42,28 +42,29 @@ Can trail's popularity be predicted by its features?
 
 ## Findings
 The state with the most trails in US Parks is California (707).  [Eric, you moved to the right place! :)]
-	https://github.com/jgoeman/Jog-Your-Memory/blob/LewerS/Resources/TrailsPerState.png
+
+ https://github.com/jgoeman/Jog-Your-Memory/blob/LewerS/Resources/TrailsPerState.png
 
 
 Almost all 3,313 US Park trails in our dataset were rated pretty good.  With an average user rating of
 4.2 out of 5 stars and standard deviation of 0.95, it was difficult to determine the excellent vs okay trails.  
 
-	https://github.com/jgoeman/Jog-Your-Memory/blob/LewerS/Resources/AvgRtg.png
+ https://github.com/jgoeman/Jog-Your-Memory/blob/LewerS/Resources/AvgRtg.png
 
 The number of reviews (popularity) showed wide variation.  While 75% of the trails had 57 reviews, some had hundreds and, for a handful, thousands of reviews.
 
-	https://github.com/jgoeman/Jog-Your-Memory/blob/LewerS/Resources/NumReviews.png
+ https://github.com/jgoeman/Jog-Your-Memory/blob/LewerS/Resources/NumReviews.png
 
 This made us wonder, what makes a trail "popular" and could we use machine learning to predict a trail's popularity?
 
 The RandomForestClassifier model F1 score is between 76% and 66%.  This indicates a trails' popularity can be predicted by random chance.
 
-	https://github.com/jgoeman/Jog-Your-Memory/blob/LewerS/Resources/CM.png
+ https://github.com/jgoeman/Jog-Your-Memory/blob/LewerS/Resources/CM.png
  
 The ranked features show length and elevation gain are key indicators of a trail's popularity.  The best views are above the treeline, as evidenced in the 
-picture above.  (Adam took this photo at 11,000 feet during one of his adventures.)  Other features contributing to trail popularity are shown below.
+picture above.  (Adam took this picture at 11,000 feet during one of his adventures.)  Other features contributing to trail popularity are shown below.
  
-	https://github.com/jgoeman/Jog-Your-Memory/blob/LewerS/Resources/Rank.png
+ https://github.com/jgoeman/Jog-Your-Memory/blob/LewerS/Resources/Rank.png
 
 ## Challenges
 1. Data Resource: The original plan was to scrape trail information from the AllTrails website.  The ChromeDriver triggered a bot blocker.  We later learned AllTrails data is protected against webscraping.

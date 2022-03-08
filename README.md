@@ -9,61 +9,62 @@ Are your local parks and trails far busier than usual?  Is it harder to find a t
 Looking for therapeutic exercise and an escape away from the crowds?  Our mission is to use data science and machine learning to identify lightly trafficked trails with undiscovered greatness; the "Hidden Gems".
 
 ## Hypothesis/Question 
-Which trail features drive a trails popularity?  
+Can a trail's popularity be predicted by its features?  
   
 ## Approach  
-  1. Obtain trail information from National Parks Kaggle Data including trail name, location, distance, elevation gain, difficulty, rating, type of trail, features, activities, and map coordinates
-  1. Clean the data, create a Pandas DataFrame, and save as a csv file
-     * Create separate columns for each trail feature/activity
+  1. Obtain trail information from National Parks Kaggle Data including trail name, location, distance, elevation gain, difficulty, rating, type of trail, features, activities, and map coordinates.
+ 
+  1. Clean the data, create a Pandas DataFrame, and save as a csv file.
+     * Separated all categorical features and activities into columns and converted them to numerical values
      * Create a new column for the AllTrails URL & create URL by combining the base URL with the state and trail name
      * Separate the geo-location column into separate lat & lng columns
      * Drop unnecessary columns
 
-  1. Perform statistical analysis on AllTrails dataset
-  
-     * California has the most National Park Trails by far
-     
-     ![Trails_per_state](https://user-images.githubusercontent.com/90863226/156673910-6bf1e64a-a5e5-491a-a279-221691d6a463.png)
-     
-     * The average ratings are very tightly distributed, which makes it difficult to distinguish excellent vs good trails
-     
-     ![Avg_Rating_Stats](https://user-images.githubusercontent.com/90863226/156673938-3c6bf6a6-e718-4fcd-8992-65df8fabe50c.png)
-  
-     * Trail popularity, based on number of reviews, shows variation
+  1. Perform statistical analysis on the AllTrails dataset.
    
-     ![Number_of_Reviews_stats](https://user-images.githubusercontent.com/90863226/156673966-093616a0-1a31-476b-afbf-0a3434e24753.png)
-   
-  1. Scrape trail reviews from TripAdvisor
+  1. Use splinter and BeautifulSoup to scrape trail reviews from TripAdvisor.
 
-  2. Create a vaderSentiment model to assign a Sentiment score to each TripAdvisor review, and get a Sentiment positive/negative rating by trail using an average of each trail's review scores
+  1. Create a VaderSentimentAnalysis to assign a sentiment score to each TripAdvisor review.
 
-  1. Run a Fuzzy Match to combine the sentiment scores/ratings subset with the related AllTrails data
+  1. Use fuzzywuzzy to combine the TripAdvisor and AllTrails trail data.
   
-  1. Use RandomForest to create a model to determine the relationship between a trail's features and its sentiment score/rating
+  1. Use a RandomForestClassifer model to predict trail popularity based on its features and activities.
   
-  ![RF_Confusion_Matrix](https://user-images.githubusercontent.com/90863226/156674112-0d0ef9b3-edee-4f8a-84af-628a212bc02f.png)
+  1. Apply the model to the AllTrails dataset.  Secondly, use the predicted popularity and trails with low traffic (number of reviews) to identify undiscovered hidden gems. 
   
-  ![RF_Important_Features](https://user-images.githubusercontent.com/90863226/156674129-d6ffabb9-9245-40dd-ac36-b5f1d89ba3d6.png)
+  1. Use HTML, Javascript, and CSS to display results on a webpage.
   
-  1. Apply the model to the AllTrails dataset to predict the sentiment score/rating to every trail in the dataset, and use this in conjunction with the number of reviews to find the "Diamonds in the Rough" 
-  
-  1. Use HTML, Javascript, and CSS to display results on a webpage
-  
-     * User inputs: Location (city and state), Trail Difficulty, Desired Features
+     * User selections: State and feature options, including hidden gems
 
      * App renders a map (center is user's entered location) with markers at trailhead and pop-ups with key trail information
 
-     * Include link to AllTrails app for selected trail
+     * Pop-up includes a link to AllTrails app for selected trail
 
-  _Additional features, time permitting_:
-  
-  * Filter based on Features/Activities (top 10 from RF rank list)
-  
-  * Diamond in the Rough Layer - or different shaped markers to stand out
+## Findings
+The state with the most trails in US Parks is California (707).
+ 
+![TrailsPerState](https://user-images.githubusercontent.com/90986041/157145933-81ea3acf-9f52-4bce-bd97-5f22d4d5edd1.png)
 
-## Challenges
-1. Data Resource: Our original plan was to scrape trail information from the AllTrails website.  The ChromeDriver triggered a bot blocker.  We later learned AllTrails data is protected against webscraping.
-2. Matching Reviews to AllTrails data: the trail name between the two datasets wasn't always matching up 100%. Found a Python fuzzywuzzy module to perform a fuzzymatch the two files together.
+
+Almost all 3,313 US Park trails in our dataset were rated pretty good.  With an average user rating of
+4.2 out of 5 stars and standard deviation of 0.95, it was difficult to determine the excellent vs okay trails.  
+
+ ![AvgRtg](https://user-images.githubusercontent.com/90986041/157145949-08c90084-ec34-43cc-8643-7eb3a7cfe32d.png)
+
+The number of reviews (popularity) showed wide variation.  While 75% of the trails had 57 reviews, some had hundreds and, for a handful, thousands of reviews.
+
+![NumReviews](https://user-images.githubusercontent.com/90986041/157145968-09b17f37-af0b-4b45-b6aa-63d51d6a7fbc.png)
+
+This made us wonder, what makes a trail "popular" and could we use machine learning to predict a trail's popularity?
+
+The RandomForestClassifier model F1 score is between 76% and 66%.  This indicates a trails' popularity can be predicted by random chance.
+
+![CM](https://user-images.githubusercontent.com/90986041/157145983-d618cf3b-b68c-4cc0-87df-96d1389d908a.png)
+ 
+The ranked features show length and elevation gain are key indicators of a trail's popularity.  The best views are above the treeline, as evidenced in the 
+picture above.  (Adam took this picture at 11,000 feet during one of his adventures.)  Other features contributing to trail popularity are shown below.
+
+![Rank](https://user-images.githubusercontent.com/90986041/157145998-02cc5384-a5e2-42ea-81f7-fbf41f6f401a.png)
 
 ___
 ## Resources:
@@ -76,9 +77,10 @@ _Applications_:
 *  Python
    *  pandas/numpy/matplotlib
    *  splinter/BeautifulSoup
-   *  vaderSentiment
    *  fuzzywuzzy
    *  sklearn
+*  VaderSentimentAnalysis
+*  RandomForestClassifier 
 *  Javascript, HTML, and CSS
 *  Leaflet
 *  PowerPoint
